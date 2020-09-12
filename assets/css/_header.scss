@@ -1,0 +1,22 @@
+header {
+	margin: 0.5em 0;
+	width: 100%;
+	height: 10%;
+	// border: 3px solid #2b7edd; //TODO: Quitar este borde, es unicamente para marcar un area
+	.cabecera {
+		width: 100%;
+		// border: 3px solid #dd2bb1; //TODO: Quitar este borde, es unicamente para marcar un area
+		@include centrarContenido(flex-start, center, row);
+		.img_container {
+			width: 5%;
+		}
+		.title {
+			h2 {
+				color: $NegroOscuro;
+			}
+			p {
+				color: $NegroClaro;
+			}
+		}
+	}
+}

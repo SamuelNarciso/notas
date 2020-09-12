@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="assets/css/styles.css" />
+		<title>Notes📓</title>
+	</head>
+	<body>
+		<div class="content">
+			<header>
+				<div class="cabecera">
+					<div class="img_container">
+						<img class="img" src="assets/img/note_logo.svg" alt="N" />
+					</div>
+					<div class="title">
+						<h2>Notes App</h2>
+						<p>write something</p>
+					</div>
+				</div>
+			</header>
+			<main>
+				<section class="notes_preview">
+					<div class="header_notes_preview">
+						<div class="img_container">
+							<span class="material-icons"> import_contacts </span>
+							<!-- <img class="img" src="assets/img/list.svg" alt="Notes" /> -->
+						</div>
+						<h3 class="dashboard">Notes</h3>
+
+						<input
+							type="button"
+							class="btn_nueva_nota"
+							id="newNote"
+							value="New note"
+						/>
+					</div>
+
+					<div class="notes_list">
+						<ul class="list" id="list_notes_preview_ul">
+							<!-- <div class="imagenRapida">
+								<img src="assets/img/notes_view.svg" class="img" alt="">
+							</div> -->
+
+							<li class="note_item" id="li_1231">
+								<span class="title_note">Title</span>
+								<span class="content_note">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									<span class="material-icons delete-icon"> delete </span>
+								</span>
+							</li>
+
+							<li class="note_item" id="li_1232">
+								<span class="title_note">Title</span>
+								<span class="content_note">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									<span class="material-icons delete-icon"> delete </span>
+								</span>
+							</li>
+
+							<li class="note_item" id="li_1233">
+								<span class="title_note">Title</span>
+								<span class="content_note">
+									Lorem i.
+									<span class="material-icons delete-icon"> delete </span>
+								</span>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="notes_view">
+					<div class="cabecera_notas">
+						<input type="text" id="entrada" placeholder="Title" />
+						<input type="button" value="Save" class="boton" id="add" />
+					</div>
+					<div class="contenedor_notas">
+						<!-- disabled -->
+						<textarea
+							id="area_notas"
+							cols="30"
+							rows="15"
+							placeholder="write something"
+						></textarea>
+					</div>
+				</section>
+			</main>
+		</div>
+
+		<script src="assets/js/app.js" type="module"></script>
+	</body>
+</html>
