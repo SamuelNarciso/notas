@@ -1,8 +1,11 @@
 // Colores:
-$FondoBlancoOpaco: #f1f1f1;
-$NaranjaClaro: #e28b63;
-$NegroClaro: #393e46;
-$NegroOscuro: #222831;
+$FondoBlancoOpaco:	 #f1f1f1;
+$NaranjaClaro:		 #e28b63;
+$NegroClaro:		 #393e46;
+$NegroOscuro:		 #222831;
+$AzulOscuro:		 #006a71;
+$AzulClaro:			 #00adb5;
+$RojoClaro:			 #ff4b5c;
 
 //Funciones para ahorrar contenido:
 @mixin centrarContenido($justifyContent, $alignItems, $flexDirection) {

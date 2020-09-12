@@ -9,30 +9,43 @@ const newNote_button = document.querySelector('#newNote');
 
 const lista_de_notas = new NotaList();
 
-// TODO: Cantidad maxima de letras en preview = 60;
 
 lista_notas_items.addEventListener('click', (e) => {
-	const idNota = e.target.parentElement.attributes[1].value;
 
+	const idNota = e.target.parentElement.attributes[1].value;
+	
 	console.log(e.target.parentElement.attributes[1].value);
 	titulo_nota.setAttribute('disabled', '');
 	area_nota.setAttribute('disabled', '');
-
+	
 	const notaRecibida = lista_de_notas.buscarNota(idNota)[0];
 	area_nota.value = notaRecibida.nota_contenido;
 	titulo_nota.value = notaRecibida.titulo_nota;
+	
 });
 
 const crearNotaPreview_li = (nuevaNota) => {
 	let contenidoNota_preview = nuevaNota.nota_contenido;
+	let tituloNota_preview = nuevaNota.titulo_nota;
+	
+	// TODO: Cantidad maxima de letras en contenido preview = 60;
+	// TODO: Cantidad maxima de letras en titulo preview = 22;
 	contenidoNota_preview =
 		contenidoNota_preview.length > 60
 			? contenidoNota_preview.slice(0, 60)
 			: contenidoNota_preview;
 
+			tituloNota_preview =
+		tituloNota_preview.length > 22
+			? tituloNota_preview.slice(0, 22)
+			: tituloNota_preview;
+
+
 	const nota_li = `
 	<li class="note_item" id="${nuevaNota.id_nota}">
-	<span class="title_note">${nuevaNota.titulo_nota}</span>
+	<span class="title_note">${tituloNota_preview} 
+	<i class="material-icons delete-icon"> delete </i>
+	</span>
 	<span class="content_note">
 		${contenidoNota_preview}
 	</span>
@@ -64,3 +77,4 @@ newNote_button.addEventListener('click', () => {
 	titulo_nota.removeAttribute('disabled', '');
 	area_nota.removeAttribute('disabled', '');
 });
+
