@@ -92,10 +92,11 @@ main .notes_view .cabecera_notas .boton:hover {
 
 main .notes_view .contenedor_notas {
   width: 100%;
-  height: 91%;
+  height: 85%;
 }
 
 main .notes_view .contenedor_notas #area_notas {
+  color: #1a1c20;
   min-width: 100%;
   min-height: 100%;
   max-width: 100%;
@@ -110,6 +111,283 @@ main .notes_view .contenedor_notas #area_notas {
 
 main .notes_view .contenedor_notas #area_notas:active, main .notes_view .contenedor_notas #area_notas:hover, main .notes_view .contenedor_notas #area_notas:focus {
   border: none;
+}
+
+main .notes_view .editor_notas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background: #fafafa;
+  -webkit-box-shadow: 0px -1px 5px 1px rgba(184, 184, 184, 0.5);
+          box-shadow: 0px -1px 5px 1px rgba(184, 184, 184, 0.5);
+  height: 6%;
+  padding: 0 5px;
+  width: 100%;
+}
+
+main .notes_view .editor_notas .Modification {
+  font-weight: 600;
+  color: #393e46;
+}
+
+main .notes_view .editor_notas .Modification #date-modification {
+  padding-left: 12px;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+main .notes_view .editor_notas .icons {
+  position: relative;
+}
+
+main .notes_view .editor_notas .icons .material-icons {
+  color: #393e46;
+}
+
+main .notes_view .editor_notas .icons .material-icons:hover.choose-color {
+  cursor: pointer;
+  color: #006a71;
+  -webkit-filter: drop-shadow(1px 1px 10px #00adb5);
+          filter: drop-shadow(1px 1px 10px #00adb5);
+}
+
+main .notes_view .editor_notas .icons .material-icons:hover.delete {
+  cursor: pointer;
+  color: #ff4b5c;
+  -webkit-filter: drop-shadow(1px 1px 10px #e28b63);
+          filter: drop-shadow(1px 1px 10px #e28b63);
+}
+
+main .notes_view .editor_notas .icons .colors-pallete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-animation: popUp 0.4s ease 0s 1 normal both;
+          animation: popUp 0.4s ease 0s 1 normal both;
+  background: #fafafa;
+  bottom: 110%;
+  border-radius: 20px 20px 0px 20px;
+  -webkit-box-shadow: 1px -1px 5px 1px rgba(184, 184, 184, 0.5);
+          box-shadow: 1px -1px 5px 1px rgba(184, 184, 184, 0.5);
+  height: 210px;
+  position: absolute;
+  padding: 10px;
+  right: 40px;
+  width: 350px;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .button-color {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ffffff;
+  -webkit-box-shadow: 0px 0px 5px 1px #c2c2c2;
+          box-shadow: 0px 0px 5px 1px #c2c2c2;
+  border-radius: 5px;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .button-color:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 5px 1px #919191;
+          box-shadow: 0px 0px 5px 1px #919191;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .title-colors {
+  color: #393e46;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  margin: 5px 0;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-fondo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 50%;
+  width: 100%;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-fondo .colores {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-blanco {
+  background: #f1f1f1;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-naranja {
+  background: #ff7e67;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-azul {
+  background: #68b0ab;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-amarillo {
+  background: #ffc93c;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-rosa {
+  background: #d789d7;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-rojo {
+  background: #ff4b5c;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-verde {
+  background: #91d18b;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-letras {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 50%;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-letras .colors {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-letras #letra-color-negro {
+  background: #1a1c20;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-letras #letra-color-blanco {
+  background: #f1f1f1;
+}
+
+main .notes_view .editor_notas .icons .colors-pallete .colores-letras #letra-color-gris {
+  background: #4c4e57;
+}
+
+.hide {
+  display: none;
+}
+
+.desaparecer {
+  -webkit-animation: popUpReverse 0.4s ease 0s 1 normal both;
+          animation: popUpReverse 0.4s ease 0s 1 normal both;
+}
+
+@-webkit-keyframes popUp {
+  0.0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  99.5% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes popUp {
+  0.0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  99.5% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes popUpReverse {
+  0.0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  99.5% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes popUpReverse {
+  0.0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  99.5% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
 }
 
 main {
@@ -165,8 +443,8 @@ main .notes_preview .header_notes_preview .btn_nueva_nota {
   border: none;
   border-radius: 15px;
   color: #fafafa;
-  -webkit-filter: brightness(87%);
-          filter: brightness(87%);
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
   font-size: 1.1em;
   font-weight: 600;
   height: 72%;
@@ -178,8 +456,8 @@ main .notes_preview .header_notes_preview .btn_nueva_nota {
 main .notes_preview .header_notes_preview .btn_nueva_nota:hover {
   background: #e28b63;
   cursor: pointer;
-  -webkit-filter: brightness(100%);
-          filter: brightness(100%);
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
 }
 
 main .notes_preview .notes_list {
@@ -193,7 +471,8 @@ main .notes_preview .notes_list .img {
 main .notes_preview .notes_list .list {
   overflow-y: auto;
   padding: 10px;
-  height: 100%;
+  padding-bottom: 20px;
+  height: 90%;
 }
 
 main .notes_preview .notes_list .list .note_item {

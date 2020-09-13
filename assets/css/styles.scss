@@ -1,5 +1,6 @@
 // Colores:
-$FondoBlancoOpaco:	 #f1f1f1;
+$BlancoOpaco:	 #f1f1f1;
+$BlancoClaro:	 #fafafa;
 $NaranjaClaro:		 #e28b63;
 $NegroClaro:		 #393e46;
 $NegroOscuro:		 #222831;
@@ -11,7 +12,7 @@ $RojoClaro:			 #ff4b5c;
 @mixin centrarContenido($justifyContent, $alignItems, $flexDirection) {
 	display: flex;
 
-	// justify-content:  ;
+	// justify-content:space-evenly  ;
 	// align-items:      ;
 	// flex-direction:   ;
 
