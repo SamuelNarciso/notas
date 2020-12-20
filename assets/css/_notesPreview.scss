@@ -44,7 +44,6 @@ main {
 					border: 2px solid #8081813d;
 					border-radius: 05px;
 					@include centrarContenido(center, flex-start, column);
-
 					height: 4.5em;
 					margin: 0.8em 0;
 					padding: 0 0.5em;
@@ -53,7 +52,7 @@ main {
 						overflow: hidden;
 						@include centrarContenido(space-between, flex-start, row);
 						width: 100%;
-						height: 30%;
+						height: 35%;
 						font-weight: 700;
 						font-size: 1.2em;
 						color: $NegroClaro;
@@ -67,10 +66,10 @@ main {
 						}
 					}
 					.content_note {
-						color: $NegroClaro;
+						// color: $NegroClaro;
 						text-align: justify;
 						width: 100%;
-						height: 70%;
+						height: 65%;
 					}
 					&:hover {
 						cursor: pointer;

@@ -16,13 +16,16 @@ const lista_de_notas = new NotaList();
 save_button.addEventListener('click', () => {
 	const titulo = titulo_nota.value;
 	const contenido = area_nota.value;
+	const color_fondo = contenedor_notas.dataset.color_fondo;
+	const color_letra = contenedor_notas.dataset.color_texto;
 
 	if (titulo) {
-		const nuevaNota = new Nota(titulo, contenido);
+		const nuevaNota = new Nota(titulo, contenido, color_fondo, color_letra);
 		lista_de_notas.agregarNota(nuevaNota);
 		crearNotaPreview_li(nuevaNota, lista_notas_items);
 		titulo_nota.value = '';
 		area_nota.value = '';
+		console.log(lista_de_notas);
 	} else {
 		alert('Debes ponerle un titulo');
 	}
@@ -91,8 +94,8 @@ colors_pallete.addEventListener('click', (e) => {
 
 			area_nota.classList.forEach((clase) => {
 				if (clase.includes('letra-color')) {
-					 area_nota.classList.remove(clase);
-					 area_nota.classList.add(color);
+					area_nota.classList.remove(clase);
+					area_nota.classList.add(color);
 				}
 			});
 			// console.log(contenedor_notas.dataset);

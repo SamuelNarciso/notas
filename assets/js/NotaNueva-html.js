@@ -1,4 +1,4 @@
-export const crearNotaPreview_li = (nuevaNota,contenedor_colocar) => {
+export const crearNotaPreview_li = (nuevaNota, contenedor_colocar) => {
 	let contenidoNota_preview = nuevaNota.nota_contenido;
 	let tituloNota_preview = nuevaNota.titulo_nota;
 
@@ -15,11 +15,11 @@ export const crearNotaPreview_li = (nuevaNota,contenedor_colocar) => {
 			: tituloNota_preview;
 
 	const nota_li = `
-	<li class="note_item " id="${nuevaNota.id_nota}">
+	<li class="note_item  ${nuevaNota.color_fondo}" id="${nuevaNota.id_nota}">
 	<span class="titulo_nota_item_vistaPrevia ">${tituloNota_preview} 
 	<i class="material-icons delete-icon"> delete </i>
 	</span>
-	<span class="content_note ">
+	<span class="content_note ${nuevaNota.color_letra} ">
 		${contenidoNota_preview}
 	</span>
 	</li>`;

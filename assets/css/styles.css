@@ -487,7 +487,7 @@ main .lista_notas_vistaPrevia_izquierda .notes_list .list .note_item .titulo_not
       -ms-flex-direction: row;
           flex-direction: row;
   width: 100%;
-  height: 30%;
+  height: 35%;
   font-weight: 700;
   font-size: 1.2em;
   color: #393e46;
@@ -504,10 +504,9 @@ main .lista_notas_vistaPrevia_izquierda .notes_list .list .note_item .titulo_not
 }
 
 main .lista_notas_vistaPrevia_izquierda .notes_list .list .note_item .content_note {
-  color: #393e46;
   text-align: justify;
   width: 100%;
-  height: 70%;
+  height: 65%;
 }
 
 main .lista_notas_vistaPrevia_izquierda .notes_list .list .note_item:hover {
