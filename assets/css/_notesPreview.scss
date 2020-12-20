@@ -1,16 +1,7 @@
 main {
-	height: 90%;
-	.notes_preview {
-		margin-top: 5px;
-		background: $BlancoOpaco;
-		border-radius: 15px;
-		box-shadow: -2px 2px 5px 1px #b8b8b8;
-		height: 90%;
-		overflow: hidden;
-		width: 30%;
-		.header_notes_preview {
+	.lista_notas_vistaPrevia_izquierda {
+		.cabecera_vistaPrevia_notas {
 			@include centrarContenido(space-between, center, row);
-			border-radius: 15px;
 			margin: 0 1em;
 			height: 10%;
 
@@ -18,20 +9,19 @@ main {
 				width: 10%;
 				color: $AzulOscuro;
 				.material-icons {
-					font-size: 34px;
+					font-size: 36px;
 				}
 			}
-			.dashboard {
+			.titulo_vistaPrevia_notas {
 				color: #222831;
-				font-size: 35px;
+				font-size: 2.75vmax;
 			}
-			.btn_nueva_nota {
+			.boton_vistaPrevia_notas {
 				background: $NaranjaClaro;
 				border: none;
 				border-radius: 15px;
-				color: #fafafa;
-				filter: brightness(95%);
-				font-size: 1.1em;
+				color: $BlancoClaro;
+				font-size: 1.4vmax;
 				font-weight: 600;
 				height: 72%;
 				transition: all ease-in-out 0.2s;
@@ -44,53 +34,57 @@ main {
 			}
 		}
 		.notes_list {
-			height: 100%;
-			.img {
-				opacity: 0.7;
-			}
+			height: 90%;
 
 			.list {
 				overflow-y: auto;
-				padding: 10px;
-				padding-bottom:20px;
-				height: 90%;
+				padding: 0 .51em;
+				height: 100%;
 				.note_item {
 					border: 2px solid #8081813d;
-					border-radius: 10px;
+					border-radius: 05px;
 					@include centrarContenido(center, flex-start, column);
+
 					height: 4.5em;
 					margin: 0.8em 0;
 					padding: 0 0.5em;
-					.title_note {
-						@include centrarContenido(space-between, center, row);
+					overflow: hidden;
+					.titulo_nota_item_vistaPrevia {
+						overflow: hidden;
+						@include centrarContenido(space-between, flex-start, row);
 						width: 100%;
+						height: 30%;
 						font-weight: 700;
 						font-size: 1.2em;
-						color: #222831;
+						color: $NegroClaro;
 						.delete-icon {
-							color: $NegroOscuro;
+							// color: $NegroOscuro;
 							opacity: 0.5;
+							&:hover  {
+								opacity: 1;
+								filter: drop-shadow(1px 1px 1px $NegroClaro);
+							}
 						}
 					}
 					.content_note {
-						color: #393e46;
+						color: $NegroClaro;
 						text-align: justify;
 						width: 100%;
-						height: 100%;
+						height: 70%;
 					}
 					&:hover {
 						cursor: pointer;
 						box-shadow: -2px 2px 5px 1px rgba(184, 184, 184, 1);
 					}
-					&:hover .title_note {
-						color: #0a0a0a;
+					&:hover .titulo_nota_item_vistaPrevia {
+						color: $NegroOscuro;
 					}
 
-					&:hover .title_note .delete-icon {
+					&:hover .titulo_nota_item_vistaPrevia .delete-icon {
 						color: $RojoClaro;
-						opacity: 1;
-						filter: drop-shadow(1px 1px 2px $NegroClaro);
 					}
+
+				
 				}
 			}
 		}

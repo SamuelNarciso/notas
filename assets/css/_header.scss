@@ -1,28 +1,41 @@
 header {
-	margin: 0.5em 0;
-	width: 100%;
-	height: 10%;
+	// margin: 0.5em 0;
+	width: 95vw;
+	height: 10vh;
 	.cabecera {
 		width: 100%;
-		@include centrarContenido(flex-start, center, row);
+		height: 100%;
+
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
 		.img_container {
-			width: 5%;
+			width: 5vw;
+			padding: 5px;
+
+			img {
+				width: 90%;
+			}
 		}
+
 		.title {
 			h2 {
+				font-size: 1.9vmax;
+				font-weight: 900;
 				color: $NegroOscuro;
 			}
 			p {
+				font-weight: 500;
+				font-size: 1.3vmax;
 				color: $NegroClaro;
 				position: relative;
-				&::before{
+				&::before {
 					position: absolute;
 					content: '';
 					width: 50%;
 					height: 1px;
 					background: $NegroOscuro;
-					
-
 				}
 			}
 		}

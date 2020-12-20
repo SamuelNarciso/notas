@@ -1,0 +1,21 @@
+main {
+	height: 85vh;
+	width: 95vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	.lista_notas_vistaPrevia_izquierda {
+        height: 100%;
+        width: 30%;
+        box-shadow: -2px 2px 5px 1px #b8b8b8;
+        background: $BlancoOpaco;
+        border-radius: 15px;
+        overflow: hidden;
+	}
+	.campo_notas_derecha {
+        height: 100%;
+        width: 70%;
+        box-shadow: 0px 1px 5px 1px rgb(184, 184, 184);
+        margin: 0 1em;
+	}
+}

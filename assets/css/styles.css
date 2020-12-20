@@ -1,11 +1,11 @@
 header {
-  margin: 0.5em 0;
-  width: 100%;
-  height: 10%;
+  width: 95vw;
+  height: 10vh;
 }
 
 header .cabecera {
   width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,21 +15,26 @@ header .cabecera {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
 header .cabecera .img_container {
-  width: 5%;
+  width: 5vw;
+  padding: 5px;
+}
+
+header .cabecera .img_container img {
+  width: 90%;
 }
 
 header .cabecera .title h2 {
+  font-size: 1.9vmax;
+  font-weight: 900;
   color: #222831;
 }
 
 header .cabecera .title p {
+  font-weight: 500;
+  font-size: 1.3vmax;
   color: #393e46;
   position: relative;
 }
@@ -43,39 +48,60 @@ header .cabecera .title p::before {
 }
 
 main {
+  height: 85vh;
+  width: 95vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-main .notes_view {
-  margin: 0 1em;
-  margin-top: 5px;
+main .lista_notas_vistaPrevia_izquierda {
+  height: 100%;
+  width: 30%;
+  -webkit-box-shadow: -2px 2px 5px 1px #b8b8b8;
+          box-shadow: -2px 2px 5px 1px #b8b8b8;
+  background: #f1f1f1;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+main .campo_notas_derecha {
+  height: 100%;
   width: 70%;
-  height: 90%;
   -webkit-box-shadow: 0px 1px 5px 1px #b8b8b8;
           box-shadow: 0px 1px 5px 1px #b8b8b8;
+  margin: 0 1em;
 }
 
-main .notes_view .cabecera_notas {
+main .campo_notas_derecha .cabecera_notas {
   height: 9%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-main .notes_view .cabecera_notas #entrada {
+main .campo_notas_derecha .cabecera_notas #entrada {
   background: #fafafa;
   border: none;
-  color: #161616;
+  color: #222831;
   font-size: 26px;
   height: 100%;
   padding: 0 0.5em;
   width: 85%;
 }
 
-main .notes_view .cabecera_notas .boton {
+main .campo_notas_derecha .cabecera_notas .boton {
   background: #1bb198;
   border: none;
   font-size: 20px;
@@ -85,17 +111,19 @@ main .notes_view .cabecera_notas .boton {
   width: 15%;
 }
 
-main .notes_view .cabecera_notas .boton:hover {
+main .campo_notas_derecha .cabecera_notas .boton:hover {
+  text-decoration: underline;
   background: #12bcc5;
   cursor: pointer;
 }
 
-main .notes_view .contenedor_notas {
+main .campo_notas_derecha .contenedor_notas {
   width: 100%;
   height: 85%;
+  background: #f1f1f1;
 }
 
-main .notes_view .contenedor_notas #area_notas {
+main .campo_notas_derecha .contenedor_notas #area_notas {
   color: #1a1c20;
   min-width: 100%;
   min-height: 100%;
@@ -109,11 +137,11 @@ main .notes_view .contenedor_notas #area_notas {
   font-size: 20px;
 }
 
-main .notes_view .contenedor_notas #area_notas:active, main .notes_view .contenedor_notas #area_notas:hover, main .notes_view .contenedor_notas #area_notas:focus {
+main .campo_notas_derecha .contenedor_notas #area_notas:active, main .campo_notas_derecha .contenedor_notas #area_notas:hover, main .campo_notas_derecha .contenedor_notas #area_notas:focus {
   border: none;
 }
 
-main .notes_view .editor_notas {
+main .campo_notas_derecha .editor_notas {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -131,44 +159,44 @@ main .notes_view .editor_notas {
   -webkit-box-shadow: 0px -1px 5px 1px rgba(184, 184, 184, 0.5);
           box-shadow: 0px -1px 5px 1px rgba(184, 184, 184, 0.5);
   height: 6%;
-  padding: 0 5px;
+  padding: 0 0.5em;
   width: 100%;
 }
 
-main .notes_view .editor_notas .Modification {
+main .campo_notas_derecha .editor_notas .Modification {
   font-weight: 600;
   color: #393e46;
 }
 
-main .notes_view .editor_notas .Modification #date-modification {
+main .campo_notas_derecha .editor_notas .Modification #date-modification {
   padding-left: 12px;
   font-weight: 700;
   opacity: 0.7;
 }
 
-main .notes_view .editor_notas .icons {
+main .campo_notas_derecha .editor_notas .icons {
   position: relative;
 }
 
-main .notes_view .editor_notas .icons .material-icons {
+main .campo_notas_derecha .editor_notas .icons .material-icons {
   color: #393e46;
 }
 
-main .notes_view .editor_notas .icons .material-icons:hover.choose-color {
+main .campo_notas_derecha .editor_notas .icons .material-icons:hover.choose-color {
   cursor: pointer;
   color: #006a71;
   -webkit-filter: drop-shadow(1px 1px 10px #00adb5);
           filter: drop-shadow(1px 1px 10px #00adb5);
 }
 
-main .notes_view .editor_notas .icons .material-icons:hover.delete {
+main .campo_notas_derecha .editor_notas .icons .material-icons:hover.delete {
   cursor: pointer;
   color: #ff4b5c;
   -webkit-filter: drop-shadow(1px 1px 10px #e28b63);
           filter: drop-shadow(1px 1px 10px #e28b63);
 }
 
-main .notes_view .editor_notas .icons .colors-pallete {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -196,18 +224,18 @@ main .notes_view .editor_notas .icons .colors-pallete {
   width: 350px;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .button-color {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .button-color {
   width: 30px;
   height: 30px;
   border: 2px solid #ffffff;
   -webkit-box-shadow: 0px 0px 5px 1px #c2c2c2;
           box-shadow: 0px 0px 5px 1px #c2c2c2;
   border-radius: 5px;
-  -webkit-transition: all ease 0.2s;
-  transition: all ease 0.2s;
+  -webkit-transition: all ease 0.15s;
+  transition: all ease 0.15s;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .button-color:hover {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .button-color:hover {
   cursor: pointer;
   -webkit-box-shadow: 0px 0px 5px 1px #919191;
           box-shadow: 0px 0px 5px 1px #919191;
@@ -215,14 +243,14 @@ main .notes_view .editor_notas .icons .colors-pallete .button-color:hover {
           transform: scale(1.2);
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .title-colors {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .title-colors {
   color: #393e46;
   font-weight: 500;
   letter-spacing: 0.8px;
   margin: 5px 0;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-fondo {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -239,7 +267,7 @@ main .notes_view .editor_notas .icons .colors-pallete .colores-fondo {
   width: 100%;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-fondo .colores {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo .colores {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -255,35 +283,35 @@ main .notes_view .editor_notas .icons .colors-pallete .colores-fondo .colores {
   width: 100%;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-blanco {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-blanco {
   background: #f1f1f1;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-naranja {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-naranja {
   background: #ff7e67;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-azul {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-azul {
   background: #68b0ab;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-amarillo {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-amarillo {
   background: #ffc93c;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-rosa {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-rosa {
   background: #d789d7;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-rojo {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-rojo {
   background: #ff4b5c;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-verde {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-verde {
   background: #91d18b;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-letras {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-letras {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -300,7 +328,7 @@ main .notes_view .editor_notas .icons .colors-pallete .colores-letras {
   height: 50%;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-letras .colors {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-letras .colors {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -317,15 +345,15 @@ main .notes_view .editor_notas .icons .colors-pallete .colores-letras .colors {
           flex-direction: row;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-letras #letra-color-negro {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-letras #letra-color-negro {
   background: #1a1c20;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-letras #letra-color-blanco {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-letras #letra-color-blanco {
   background: #f1f1f1;
 }
 
-main .notes_view .editor_notas .icons .colors-pallete .colores-letras #letra-color-gris {
+main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-letras #letra-color-gris {
   background: #4c4e57;
 }
 
@@ -343,7 +371,7 @@ main .notes_view .editor_notas .icons .colors-pallete .colores-letras #letra-col
     -webkit-transform: scale(0);
             transform: scale(0);
   }
-  99.5% {
+  100% {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
@@ -354,7 +382,7 @@ main .notes_view .editor_notas .icons .colors-pallete .colores-letras #letra-col
     -webkit-transform: scale(0);
             transform: scale(0);
   }
-  99.5% {
+  100% {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
@@ -390,22 +418,7 @@ main .notes_view .editor_notas .icons .colors-pallete .colores-letras #letra-col
   }
 }
 
-main {
-  height: 90%;
-}
-
-main .notes_preview {
-  margin-top: 5px;
-  background: #f1f1f1;
-  border-radius: 15px;
-  -webkit-box-shadow: -2px 2px 5px 1px #b8b8b8;
-          box-shadow: -2px 2px 5px 1px #b8b8b8;
-  height: 90%;
-  overflow: hidden;
-  width: 30%;
-}
-
-main .notes_preview .header_notes_preview {
+main .lista_notas_vistaPrevia_izquierda .cabecera_vistaPrevia_notas {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -419,33 +432,30 @@ main .notes_preview .header_notes_preview {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  border-radius: 15px;
   margin: 0 1em;
   height: 10%;
 }
 
-main .notes_preview .header_notes_preview .img_container {
+main .lista_notas_vistaPrevia_izquierda .cabecera_vistaPrevia_notas .img_container {
   width: 10%;
   color: #006a71;
 }
 
-main .notes_preview .header_notes_preview .img_container .material-icons {
-  font-size: 34px;
+main .lista_notas_vistaPrevia_izquierda .cabecera_vistaPrevia_notas .img_container .material-icons {
+  font-size: 36px;
 }
 
-main .notes_preview .header_notes_preview .dashboard {
+main .lista_notas_vistaPrevia_izquierda .cabecera_vistaPrevia_notas .titulo_vistaPrevia_notas {
   color: #222831;
-  font-size: 35px;
+  font-size: 2.75vmax;
 }
 
-main .notes_preview .header_notes_preview .btn_nueva_nota {
+main .lista_notas_vistaPrevia_izquierda .cabecera_vistaPrevia_notas .boton_vistaPrevia_notas {
   background: #e28b63;
   border: none;
   border-radius: 15px;
   color: #fafafa;
-  -webkit-filter: brightness(95%);
-          filter: brightness(95%);
-  font-size: 1.1em;
+  font-size: 1.4vmax;
   font-weight: 600;
   height: 72%;
   -webkit-transition: all ease-in-out 0.2s;
@@ -453,31 +463,26 @@ main .notes_preview .header_notes_preview .btn_nueva_nota {
   width: 30%;
 }
 
-main .notes_preview .header_notes_preview .btn_nueva_nota:hover {
+main .lista_notas_vistaPrevia_izquierda .cabecera_vistaPrevia_notas .boton_vistaPrevia_notas:hover {
   background: #e28b63;
   cursor: pointer;
   -webkit-filter: brightness(110%);
           filter: brightness(110%);
 }
 
-main .notes_preview .notes_list {
-  height: 100%;
-}
-
-main .notes_preview .notes_list .img {
-  opacity: 0.7;
-}
-
-main .notes_preview .notes_list .list {
-  overflow-y: auto;
-  padding: 10px;
-  padding-bottom: 20px;
+main .lista_notas_vistaPrevia_izquierda .notes_list {
   height: 90%;
 }
 
-main .notes_preview .notes_list .list .note_item {
+main .lista_notas_vistaPrevia_izquierda .notes_list .list {
+  overflow-y: auto;
+  padding: 0 .51em;
+  height: 100%;
+}
+
+main .lista_notas_vistaPrevia_izquierda .notes_list .list .note_item {
   border: 2px solid #8081813d;
-  border-radius: 10px;
+  border-radius: 05px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -494,55 +499,60 @@ main .notes_preview .notes_list .list .note_item {
   height: 4.5em;
   margin: 0.8em 0;
   padding: 0 0.5em;
+  overflow: hidden;
 }
 
-main .notes_preview .notes_list .list .note_item .title_note {
+main .lista_notas_vistaPrevia_izquierda .notes_list .list .note_item .titulo_nota_item_vistaPrevia {
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
   width: 100%;
+  height: 30%;
   font-weight: 700;
   font-size: 1.2em;
-  color: #222831;
+  color: #393e46;
 }
 
-main .notes_preview .notes_list .list .note_item .title_note .delete-icon {
-  color: #222831;
+main .lista_notas_vistaPrevia_izquierda .notes_list .list .note_item .titulo_nota_item_vistaPrevia .delete-icon {
   opacity: 0.5;
 }
 
-main .notes_preview .notes_list .list .note_item .content_note {
+main .lista_notas_vistaPrevia_izquierda .notes_list .list .note_item .titulo_nota_item_vistaPrevia .delete-icon:hover {
+  opacity: 1;
+  -webkit-filter: drop-shadow(1px 1px 1px #393e46);
+          filter: drop-shadow(1px 1px 1px #393e46);
+}
+
+main .lista_notas_vistaPrevia_izquierda .notes_list .list .note_item .content_note {
   color: #393e46;
   text-align: justify;
   width: 100%;
-  height: 100%;
+  height: 70%;
 }
 
-main .notes_preview .notes_list .list .note_item:hover {
+main .lista_notas_vistaPrevia_izquierda .notes_list .list .note_item:hover {
   cursor: pointer;
   -webkit-box-shadow: -2px 2px 5px 1px #b8b8b8;
           box-shadow: -2px 2px 5px 1px #b8b8b8;
 }
 
-main .notes_preview .notes_list .list .note_item:hover .title_note {
-  color: #0a0a0a;
+main .lista_notas_vistaPrevia_izquierda .notes_list .list .note_item:hover .titulo_nota_item_vistaPrevia {
+  color: #222831;
 }
 
-main .notes_preview .notes_list .list .note_item:hover .title_note .delete-icon {
+main .lista_notas_vistaPrevia_izquierda .notes_list .list .note_item:hover .titulo_nota_item_vistaPrevia .delete-icon {
   color: #ff4b5c;
-  opacity: 1;
-  -webkit-filter: drop-shadow(1px 1px 2px #393e46);
-          filter: drop-shadow(1px 1px 2px #393e46);
 }
 
 * {
@@ -556,7 +566,7 @@ main .notes_preview .notes_list .list .note_item:hover .title_note .delete-icon 
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
 }
 
 body {
@@ -564,9 +574,19 @@ body {
 }
 
 .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   max-width: 1200px;
-  width: 90%;
-  height: 100%;
+  width: 90vw;
+  height: 100vh;
   margin: 0 auto;
 }
 

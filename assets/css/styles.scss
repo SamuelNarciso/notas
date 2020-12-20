@@ -11,18 +11,13 @@ $RojoClaro:			 #ff4b5c;
 //Funciones para ahorrar contenido:
 @mixin centrarContenido($justifyContent, $alignItems, $flexDirection) {
 	display: flex;
-
-	// justify-content:space-evenly  ;
-	// align-items:      ;
-	// flex-direction:   ;
-
 	justify-content: $justifyContent;
 	align-items: $alignItems;
 	flex-direction: $flexDirection;
-	// Esta funcion alinea vertical y horizontalmente los elementos de un contenedor.
 }
 // Otras clases de css
 @import 'header';
+@import 'main';
 @import 'notes_view';
 @import 'notesPreview';
 
@@ -37,7 +32,7 @@ $RojoClaro:			 #ff4b5c;
 
 html,
 body {
-	height: 100%;
+	height: 100vh;
 }
 
 body {
@@ -45,9 +40,13 @@ body {
 }
 
 .content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
 	max-width: 1200px;
-	width: 90%;
-	height: 100%;
+	width: 90vw;
+	height: 100vh;
 	margin: 0 auto;
 }
 

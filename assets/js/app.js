@@ -30,10 +30,10 @@ const crearNotaPreview_li = (nuevaNota) => {
 
 	const nota_li = `
 	<li class="note_item " id="${nuevaNota.id_nota}">
-	<span class="title_note note">${tituloNota_preview} 
+	<span class="titulo_nota_item_vistaPrevia ">${tituloNota_preview} 
 	<i class="material-icons delete-icon"> delete </i>
 	</span>
-	<span class="content_note note">
+	<span class="content_note ">
 		${contenidoNota_preview}
 	</span>
 	</li>`;
