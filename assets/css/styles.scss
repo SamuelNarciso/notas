@@ -53,3 +53,35 @@ body {
 .img {
 	width: 100%;
 }
+
+.fondo-color-blanco {
+	background: #f1f1f1;
+}
+.fondo-color-naranja {
+	background: #ff7e67;
+}
+.fondo-color-azul {
+	background: #68b0ab;
+}
+.fondo-color-amarillo {
+	background: #ffc93c;
+}
+.fondo-color-rosa {
+	background: #d789d7;
+}
+.fondo-color-rojo {
+	background: #ff4b5c;
+}
+.fondo-color-verde {
+	background: #91d18b;
+}
+
+.letra-color-negro {
+	color: #1a1c20;
+}
+.letra-color-blanco {
+	color: $BlancoOpaco;
+}
+.letra-color-gris {
+	color: #4c4e57;
+}

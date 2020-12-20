@@ -1,5 +1,6 @@
-import {Nota} from './Nota.class.js';
-import {NotaList} from './Nota-list.class.js';
+import { Nota } from './Nota.class.js';
+import { NotaList } from './Nota-list.class.js';
+import { crearNotaPreview_li } from './NotaNueva-html.js';
 
 const lista_notas_items = document.querySelector('#list_notes_preview_ul');
 const titulo_nota = document.querySelector('#entrada');
@@ -12,47 +13,16 @@ const colors_pallete = document.querySelector('#colors-pallete');
 
 const lista_de_notas = new NotaList();
 
-const crearNotaPreview_li = (nuevaNota) => {
-	let contenidoNota_preview = nuevaNota.nota_contenido;
-	let tituloNota_preview = nuevaNota.titulo_nota;
-
-	// TODO: Cantidad maxima de letras en contenido preview = 60;
-	// TODO: Cantidad maxima de letras en titulo preview = 22;
-	contenidoNota_preview =
-		contenidoNota_preview.length > 60
-			? contenidoNota_preview.slice(0, 60)
-			: contenidoNota_preview;
-
-	tituloNota_preview =
-		tituloNota_preview.length > 22
-			? tituloNota_preview.slice(0, 22)
-			: tituloNota_preview;
-
-	const nota_li = `
-	<li class="note_item " id="${nuevaNota.id_nota}">
-	<span class="titulo_nota_item_vistaPrevia ">${tituloNota_preview} 
-	<i class="material-icons delete-icon"> delete </i>
-	</span>
-	<span class="content_note ">
-		${contenidoNota_preview}
-	</span>
-	</li>`;
-	const div = document.createElement('div');
-	div.innerHTML = nota_li;
-	lista_notas_items.append(div.firstElementChild);
-};
-
 save_button.addEventListener('click', () => {
 	const titulo = titulo_nota.value;
 	const contenido = area_nota.value;
 
 	if (titulo) {
-		const nuevaNota = new Nota(contenido, titulo);
+		const nuevaNota = new Nota(titulo, contenido);
 		lista_de_notas.agregarNota(nuevaNota);
-		crearNotaPreview_li(nuevaNota);
+		crearNotaPreview_li(nuevaNota, lista_notas_items);
 		titulo_nota.value = '';
 		area_nota.value = '';
-		console.log(lista_de_notas);
 	} else {
 		alert('Debes ponerle un titulo');
 	}
@@ -99,50 +69,68 @@ elegir_color.addEventListener('click', () => {
 
 	colors_pallete.classList.toggle('hide');
 
-	console.log(colors_pallete.classList);
+	// console.log(colors_pallete.classList);
 });
 
 colors_pallete.addEventListener('click', (e) => {
 	// console.log(e.target.id);
-	if (e.target.id) {
+	if (e.target.classList.value) {
 		const cambiarColor_Fondo = (color) => {
-			contenedor_notas.style.backgroundColor = color;
+			contenedor_notas.dataset.color_fondo = color;
+
+			contenedor_notas.classList.forEach((clase) => {
+				if (clase.includes('fondo-color')) {
+					contenedor_notas.classList.remove(clase);
+					contenedor_notas.classList.add(color);
+				}
+			});
 		};
 		const cambiarColor_letra = (color) => {
-			area_nota.style.color = color;
+			// area_nota.style.color = color;
+			contenedor_notas.dataset.color_texto = color;
+
+			area_nota.classList.forEach((clase) => {
+				if (clase.includes('letra-color')) {
+					 area_nota.classList.remove(clase);
+					 area_nota.classList.add(color);
+				}
+			});
+			// console.log(contenedor_notas.dataset);
 		};
+
+		console.log(e.target.classList.value.includes('fondo-color'));
 
 		switch (e.target.id) {
 			case 'fondo-color-blanco':
-				cambiarColor_Fondo('#f1f1f1');
-				cambiarColor_letra('#1a1c20');
+				cambiarColor_Fondo('fondo-color-blanco');
+				cambiarColor_letra('letra-color-negro');
 				break;
 			case 'fondo-color-naranja':
-				cambiarColor_Fondo('#ff7e67');
+				cambiarColor_Fondo('fondo-color-naranja');
 				break;
 			case 'fondo-color-azul':
-				cambiarColor_Fondo('#68b0ab');
+				cambiarColor_Fondo('fondo-color-azul');
 				break;
 			case 'fondo-color-amarillo':
-				cambiarColor_Fondo('#ffc93c');
+				cambiarColor_Fondo('fondo-color-amarillo');
 				break;
 			case 'fondo-color-rosa':
-				cambiarColor_Fondo('#d789d7');
+				cambiarColor_Fondo('fondo-color-rosa');
 				break;
 			case 'fondo-color-rojo':
-				cambiarColor_Fondo('#ff4b5c');
+				cambiarColor_Fondo('fondo-color-rojo');
 				break;
 			case 'fondo-color-verde':
-				cambiarColor_Fondo('#91d18b');
+				cambiarColor_Fondo('fondo-color-verde');
 				break;
 			case 'letra-color-negro':
-				cambiarColor_letra('#1a1c20');
+				cambiarColor_letra('letra-color-negro');
 				break;
 			case 'letra-color-blanco':
-				cambiarColor_letra('#f1f1f1');
+				cambiarColor_letra('letra-color-blanco');
 				break;
 			case 'letra-color-gris':
-				cambiarColor_letra('#4c4e57');
+				cambiarColor_letra('letra-color-gris');
 				break;
 
 			default:

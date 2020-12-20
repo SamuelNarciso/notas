@@ -120,11 +120,9 @@ main .campo_notas_derecha .cabecera_notas .boton:hover {
 main .campo_notas_derecha .contenedor_notas {
   width: 100%;
   height: 85%;
-  background: #f1f1f1;
 }
 
 main .campo_notas_derecha .contenedor_notas #area_notas {
-  color: #1a1c20;
   min-width: 100%;
   min-height: 100%;
   max-width: 100%;
@@ -165,7 +163,6 @@ main .campo_notas_derecha .editor_notas {
 
 main .campo_notas_derecha .editor_notas .Modification {
   font-weight: 600;
-  color: #393e46;
 }
 
 main .campo_notas_derecha .editor_notas .Modification #date-modification {
@@ -281,34 +278,6 @@ main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo .c
       -ms-flex-direction: row;
           flex-direction: row;
   width: 100%;
-}
-
-main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-blanco {
-  background: #f1f1f1;
-}
-
-main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-naranja {
-  background: #ff7e67;
-}
-
-main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-azul {
-  background: #68b0ab;
-}
-
-main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-amarillo {
-  background: #ffc93c;
-}
-
-main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-rosa {
-  background: #d789d7;
-}
-
-main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-rojo {
-  background: #ff4b5c;
-}
-
-main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-fondo #fondo-color-verde {
-  background: #91d18b;
 }
 
 main .campo_notas_derecha .editor_notas .icons .colors-pallete .colores-letras {
@@ -592,5 +561,45 @@ body {
 
 .img {
   width: 100%;
+}
+
+.fondo-color-blanco {
+  background: #f1f1f1;
+}
+
+.fondo-color-naranja {
+  background: #ff7e67;
+}
+
+.fondo-color-azul {
+  background: #68b0ab;
+}
+
+.fondo-color-amarillo {
+  background: #ffc93c;
+}
+
+.fondo-color-rosa {
+  background: #d789d7;
+}
+
+.fondo-color-rojo {
+  background: #ff4b5c;
+}
+
+.fondo-color-verde {
+  background: #91d18b;
+}
+
+.letra-color-negro {
+  color: #1a1c20;
+}
+
+.letra-color-blanco {
+  color: #f1f1f1;
+}
+
+.letra-color-gris {
+  color: #4c4e57;
 }
 /*# sourceMappingURL=styles.css.map */
