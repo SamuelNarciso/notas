@@ -1,8 +1,12 @@
 import { Nota } from './Nota.class.js';
 import { NotaList } from './Nota-list.class.js';
 import { crearNotaPreview_li } from './NotaNueva-html.js';
+import { ver_nota_completa } from './ver_nota_completa.js';
 
 const lista_notas_items = document.querySelector('#list_notes_preview_ul');
+const area_nota_completa = document
+	.querySelector('#area_nota_completa')
+	.getElementsByClassName('area_principal_notas');
 const titulo_nota = document.querySelector('#entrada');
 const area_nota = document.querySelector('#area_notas');
 const contenedor_notas = document.querySelector('.contenedor_notas');
@@ -38,18 +42,6 @@ newNote_button.addEventListener('click', () => {
 	area_nota.removeAttribute('disabled', '');
 });
 
-const enviarNota_areaEdicion = (e) => {
-	console.log(e.target.parentElement.id);
-
-	const idNota = e.target.parentElement.id;
-	titulo_nota.setAttribute('disabled', '');
-	area_nota.setAttribute('disabled', '');
-
-	const notaRecibida = lista_de_notas.buscarNota(idNota)[0];
-	area_nota.value = notaRecibida.nota_contenido;
-	titulo_nota.value = notaRecibida.titulo_nota;
-};
-
 const eliminarNota = (e) => {
 	const idNota = e.target.parentElement.parentElement.id;
 	lista_de_notas.eliminarNota(idNota);
@@ -58,21 +50,20 @@ const eliminarNota = (e) => {
 };
 
 lista_notas_items.addEventListener('click', (e) => {
-	console.log(e.target.classList.value);
+	// console.log(e.target.parentElement)
+	// console.log(e.target.classList.value);
 
 	if (e.target.classList.value.includes('delete-icon')) {
 		eliminarNota(e);
 	} else if (e.target.classList.value.includes('note')) {
-		enviarNota_areaEdicion(e);
+		const id = e.target.parentElement.id;
+		ver_nota_completa(id, lista_de_notas, area_nota_completa);
 	}
 });
 
 elegir_color.addEventListener('click', () => {
 	colors_pallete.classList.toggle('colors-pallete');
-
 	colors_pallete.classList.toggle('hide');
-
-	// console.log(colors_pallete.classList);
 });
 
 colors_pallete.addEventListener('click', (e) => {

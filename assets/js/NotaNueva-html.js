@@ -1,26 +1,17 @@
 export const crearNotaPreview_li = (nuevaNota, contenedor_colocar) => {
-	let contenidoNota_preview = nuevaNota.nota_contenido;
-	let tituloNota_preview = nuevaNota.titulo_nota;
+	let { titulo_nota, contenido_nota, fecha_nota } = nuevaNota.data;
+	let { color_fondo, color_letra, id_nota } = nuevaNota.propiedades;
 
-	// TODO: Cantidad maxima de letras en contenido preview = 60;
-	// TODO: Cantidad maxima de letras en titulo preview = 22;
-	contenidoNota_preview =
-		contenidoNota_preview.length > 60
-			? contenidoNota_preview.slice(0, 60)
-			: contenidoNota_preview;
-
-	tituloNota_preview =
-		tituloNota_preview.length > 22
-			? tituloNota_preview.slice(0, 22)
-			: tituloNota_preview;
+	contenido_nota =	contenido_nota.length > 60 ? contenido_nota.slice(0, 60) : contenido_nota;
+	titulo_nota = titulo_nota.length > 22 ? titulo_nota.slice(0, 22) : titulo_nota;
 
 	const nota_li = `
-	<li class="note_item  ${nuevaNota.color_fondo}" id="${nuevaNota.id_nota}">
-	<span class="titulo_nota_item_vistaPrevia ">${tituloNota_preview} 
+	<li class="note_item  ${color_fondo}" id="${id_nota}">
+	<span class="titulo_nota_item_vistaPrevia ">${titulo_nota} 
 	<i class="material-icons delete-icon"> delete </i>
 	</span>
-	<span class="content_note ${nuevaNota.color_letra} ">
-		${contenidoNota_preview}
+	<span class="content_note ${color_letra} ">
+		${contenido_nota}
 	</span>
 	</li>`;
 	const div = document.createElement('div');
