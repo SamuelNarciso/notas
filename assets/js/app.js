@@ -29,7 +29,7 @@ save_button.addEventListener('click', () => {
 		crearNotaPreview_li(nuevaNota, lista_notas_items);
 		titulo_nota.value = '';
 		area_nota.value = '';
-		console.log(lista_de_notas);
+		// console.log(lista_de_notas);
 	} else {
 		alert('Debes ponerle un titulo');
 	}
@@ -46,7 +46,7 @@ const eliminarNota = (e) => {
 	const idNota = e.target.parentElement.parentElement.id;
 	lista_de_notas.eliminarNota(idNota);
 	lista_notas_items.removeChild(document.getElementById(idNota));
-	console.log(lista_de_notas);
+	// console.log(lista_de_notas);
 };
 
 lista_notas_items.addEventListener('click', (e) => {
@@ -92,7 +92,7 @@ colors_pallete.addEventListener('click', (e) => {
 			// console.log(contenedor_notas.dataset);
 		};
 
-		console.log(e.target.classList.value.includes('fondo-color'));
+		// console.log(e.target.classList.value.includes('fondo-color'));
 
 		switch (e.target.id) {
 			case 'fondo-color-blanco':
